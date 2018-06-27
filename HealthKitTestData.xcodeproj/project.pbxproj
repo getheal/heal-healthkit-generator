@@ -11,6 +11,7 @@
 		CA64439EFE0559EDD5D280A3 /* Pods_HealthKitTestDataTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BFE38530D4AB1D71BC5596 /* Pods_HealthKitTestDataTests.framework */; };
 		E952CA3620E2F66E00CD12DD /* HKQuantityTypeRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = E952CA3520E2F66E00CD12DD /* HKQuantityTypeRanges.swift */; };
 		E952CA3820E4066B00CD12DD /* HKObjectTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E952CA3720E4066B00CD12DD /* HKObjectTypes.swift */; };
+		E952CA3A20E41C6600CD12DD /* HKQuantityType+compatibleUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E952CA3920E41C6600CD12DD /* HKQuantityType+compatibleUnit.swift */; };
 		E9779CBB20E1E18F007D9912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9779CBA20E1E18F007D9912 /* AppDelegate.swift */; };
 		E9779CBD20E1E18F007D9912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9779CBC20E1E18F007D9912 /* ViewController.swift */; };
 		E9779CC020E1E18F007D9912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9779CBE20E1E18F007D9912 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		B3FD075359B9FD22031E0B8E /* Pods-HealthKitTestDataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthKitTestDataTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthKitTestDataTests/Pods-HealthKitTestDataTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E952CA3520E2F66E00CD12DD /* HKQuantityTypeRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKQuantityTypeRanges.swift; sourceTree = "<group>"; };
 		E952CA3720E4066B00CD12DD /* HKObjectTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKObjectTypes.swift; sourceTree = "<group>"; };
+		E952CA3920E41C6600CD12DD /* HKQuantityType+compatibleUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HKQuantityType+compatibleUnit.swift"; sourceTree = "<group>"; };
 		E9779CB720E1E18F007D9912 /* HealthKitTestData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitTestData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9779CBA20E1E18F007D9912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9779CBC20E1E18F007D9912 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				E9779CC620E1E190007D9912 /* Info.plist */,
 				E9BBA97420E1E2D0006C761C /* Health.swift */,
 				E952CA3720E4066B00CD12DD /* HKObjectTypes.swift */,
+				E952CA3920E41C6600CD12DD /* HKQuantityType+compatibleUnit.swift */,
 				E952CA3520E2F66E00CD12DD /* HKQuantityTypeRanges.swift */,
 			);
 			path = HealthKitTestData;
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E952CA3620E2F66E00CD12DD /* HKQuantityTypeRanges.swift in Sources */,
+				E952CA3A20E41C6600CD12DD /* HKQuantityType+compatibleUnit.swift in Sources */,
 				E9779CBD20E1E18F007D9912 /* ViewController.swift in Sources */,
 				E9BBA97520E1E2D0006C761C /* Health.swift in Sources */,
 				E9779CBB20E1E18F007D9912 /* AppDelegate.swift in Sources */,

@@ -107,7 +107,11 @@ struct HKObjectTypes{
                              HKObjectType.quantityType(forIdentifier: .walkingHeartRateAverage)!,
                              ])
     
-    let nonsharables = Set([HKObjectType.quantityType(forIdentifier: .walkingHeartRateAverage)!])
+    let nonsharables = Set([HKObjectType.quantityType(forIdentifier: .walkingHeartRateAverage)!,
+                            //HKObjectType.quantityType(forIdentifier: .distanceDownhillSnowSports)!,
+                            //HKObjectType.quantityType(forIdentifier: .peripheralPerfusionIndex)!,
+                            //HKObjectType.quantityType(forIdentifier: .oxygenSaturation)!,
+                            ])
     let writables: Set<HKSampleType>
     let readables: Set<HKObjectType>
     init() {
@@ -116,74 +120,3 @@ struct HKObjectTypes{
     }    
     
 }
-
-//let readables = Set([HKObjectType.workoutType(),
-//
-//                     HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-//                     HKObjectType.quantityType(forIdentifier: .basalEnergyBurned)!,
-//                     HKObjectType.quantityType(forIdentifier: .basalBodyTemperature)!,
-//
-//                     HKObjectType.quantityType(forIdentifier: .distanceCycling)!,
-//                     HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
-//                     HKObjectType.quantityType(forIdentifier: .heartRate)!,
-//                     HKObjectType.quantityType(forIdentifier: .height)!,
-//                     HKObjectType.quantityType(forIdentifier: .bodyMass)!,
-//                     HKObjectType.quantityType(forIdentifier: .bodyMassIndex)!,
-//                     HKObjectType.quantityType(forIdentifier: .leanBodyMass)!,
-//                     HKObjectType.quantityType(forIdentifier: .bodyFatPercentage)!,
-//                     HKObjectType.quantityType(forIdentifier: .bodyTemperature)!,
-//                     HKObjectType.quantityType(forIdentifier: .bloodGlucose)!,
-//                     HKObjectType.quantityType(forIdentifier: .insulinDelivery)!,
-//                     HKObjectType.quantityType(forIdentifier: .vo2Max)!,
-//                     HKObjectType.quantityType(forIdentifier: .uvExposure)!,
-//
-//                     HKObjectType.quantityType(forIdentifier: .bloodPressureSystolic)!,
-//                     HKObjectType.quantityType(forIdentifier: .bloodPressureDiastolic)!,
-//
-//                     HKObjectType.categoryType(forIdentifier: .mindfulSession)!,
-//                     HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
-//                     HKObjectType.categoryType(forIdentifier: .sexualActivity)!,
-//                     HKObjectType.categoryType(forIdentifier: .intermenstrualBleeding)!,
-//                     HKObjectType.categoryType(forIdentifier: .ovulationTestResult)!,
-//                     HKObjectType.categoryType(forIdentifier: .cervicalMucusQuality)!,
-//                     HKObjectType.categoryType(forIdentifier: .menstrualFlow)!,
-//
-//                     HKObjectType.characteristicType(forIdentifier: .biologicalSex)!,
-//                     HKObjectType.characteristicType(forIdentifier: .bloodType)!,
-//                     HKObjectType.characteristicType(forIdentifier: .dateOfBirth)!,
-//                     HKObjectType.characteristicType(forIdentifier: .fitzpatrickSkinType)!,
-//                     HKObjectType.characteristicType(forIdentifier: .wheelchairUse)!,
-//                     ])
-
-//let writables = Set([HKObjectType.workoutType(),
-//
-//                     HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-//                     HKObjectType.quantityType(forIdentifier: .basalEnergyBurned)!,
-//                     HKObjectType.quantityType(forIdentifier: .basalBodyTemperature)!,
-//
-//                     HKObjectType.quantityType(forIdentifier: .distanceCycling)!,
-//                     HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
-//                     HKObjectType.quantityType(forIdentifier: .heartRate)!,
-//                     HKObjectType.quantityType(forIdentifier: .height)!,
-//                     HKObjectType.quantityType(forIdentifier: .bodyMass)!,
-//                     HKObjectType.quantityType(forIdentifier: .bodyMassIndex)!,
-//                     HKObjectType.quantityType(forIdentifier: .leanBodyMass)!,
-//                     HKObjectType.quantityType(forIdentifier: .bodyFatPercentage)!,
-//                     HKObjectType.quantityType(forIdentifier: .bodyTemperature)!,
-//                     HKObjectType.quantityType(forIdentifier: .bloodGlucose)!,
-//                     HKObjectType.quantityType(forIdentifier: .insulinDelivery)!,
-//                     HKObjectType.quantityType(forIdentifier: .vo2Max)!,
-//                     HKObjectType.quantityType(forIdentifier: .uvExposure)!,
-//
-//                     HKObjectType.quantityType(forIdentifier: .bloodPressureSystolic)!,
-//                     HKObjectType.quantityType(forIdentifier: .bloodPressureDiastolic)!,
-//
-//                     HKObjectType.categoryType(forIdentifier: .mindfulSession)!,
-//                     HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
-//                     HKObjectType.categoryType(forIdentifier: .sexualActivity)!,
-//                     HKObjectType.categoryType(forIdentifier: .intermenstrualBleeding)!,
-//                     HKObjectType.categoryType(forIdentifier: .ovulationTestResult)!,
-//                     HKObjectType.categoryType(forIdentifier: .cervicalMucusQuality)!,
-//                     HKObjectType.categoryType(forIdentifier: .menstrualFlow)!,
-//
-//                     ])

@@ -98,9 +98,15 @@ class Health {
                         fatalError("Quantity could not be set")
                     }
                     
-                    guard let unit = quantityTypeMap[quantType] else {
+                    var unit: HKUnit
+                    if quantityTypeMap[quantType] != nil{
+                        unit = quantityTypeMap[quantType]!
+                    }else if quantType.compatibleUnit() != nil{
+                        unit = quantType.compatibleUnit()!
+                    }else{
                         fatalError("Compatible HKUnit not found for \(quantType.identifier)")
                     }
+                    
                     let rand = Double(arc4random_uniform(100)+1)
                     let quantity = HKQuantity(unit: unit, doubleValue: rand)
                     

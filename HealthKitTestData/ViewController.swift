@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         let tenDaysAgo = Date() - 10.days
-        //Health().writeDataSince(since: tenDaysAgo)
+        Health().writeDataSince(since: tenDaysAgo)
         
         //Health().writeDataSince(since: Date())
         
