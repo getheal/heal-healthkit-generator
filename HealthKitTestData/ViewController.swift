@@ -10,11 +10,6 @@ import UIKit
 import HealthKit
 import SwiftDate
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
     
     override func viewDidAppear(_ animated: Bool) {    
         super.viewDidAppear(animated)
@@ -23,10 +18,7 @@ class ViewController: UIViewController {
         HKFakeData().permission(sampleTypes: hkTypes.writables, successBlock: {
             let tenDaysAgo = Date() - 2.weeks
             HKFakeData().writeDataSince(since: tenDaysAgo)
-        })            
-        
-    }
-
-    
+        })
+    }    
 }
 
