@@ -1,5 +1,5 @@
 //
-//  Health.swift
+//  HKFakeData.swift
 //  HealthKitTestData
 //
 //  Created by Ricky Kirkendall on 6/25/18.
@@ -9,22 +9,18 @@
 import Foundation
 import HealthKit
 import SwiftDate
-class Health {
-    
-    let healthStore = HKHealthStore()
-    let hkTypes = HKObjectTypes()    
-    func permission(successBlock:@escaping () -> Void){
-        for ho in hkTypes.writables {
-            print(ho.identifier)
-        }
-        healthStore.requestAuthorization(toShare: hkTypes.writables, read: hkTypes.readables) { (success, error) in
+class HKFakeData {
+    var sampleTypes = Set<HKSampleType>()
+    let healthStore = HKHealthStore()        
+    func permission(sampleTypes:Set<HKSampleType>, successBlock:@escaping () -> Void){
+        self.sampleTypes = sampleTypes
+        healthStore.requestAuthorization(toShare: sampleTypes, read: sampleTypes) { (success, error) in
             if !success {
                 
             }else{
                 successBlock()
             }
-        }
-        
+        }        
     }
     
     func getMostRecentSample(for sampleType: HKSampleType,
@@ -94,7 +90,7 @@ class Health {
         
         while iterdate < Date() {
             // Add samples for day
-            for hkObjType in hkTypes.writables{
+            for hkObjType in sampleTypes{
                 if hkObjType.isKind(of: HKQuantityType.self){
                     guard let quantType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier(rawValue: hkObjType.identifier)) else {
                         fatalError("Quantity could not be set")
@@ -175,7 +171,7 @@ class Health {
     
     func writeDataSince(since:Date){
         
-        healthStore.preferredUnits(for: hkTypes.writables as! Set<HKQuantityType>) { (quantityTypeMap, error) in
+        healthStore.preferredUnits(for: sampleTypes as! Set<HKQuantityType>) { (quantityTypeMap, error) in
             self.writeDataSince(since: since, quantityTypeMap: quantityTypeMap)
         }
         

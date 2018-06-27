@@ -18,11 +18,13 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {    
         super.viewDidAppear(animated)
+        let hkTypes = HKObjectTypes()
         
-        Health().permission {
+        HKFakeData().permission(sampleTypes: hkTypes.writables, successBlock: {
             let tenDaysAgo = Date() - 2.weeks
-            Health().writeDataSince(since: tenDaysAgo)
-        }
+            HKFakeData().writeDataSince(since: tenDaysAgo)
+        })            
+        
     }
 
     
