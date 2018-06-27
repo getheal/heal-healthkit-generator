@@ -13,13 +13,15 @@ class Health {
     
     let healthStore = HKHealthStore()
     let hkTypes = HKObjectTypes()    
-    func permission(){
+    func permission(successBlock:@escaping () -> Void){
         for ho in hkTypes.writables {
             print(ho.identifier)
         }
         healthStore.requestAuthorization(toShare: hkTypes.writables, read: hkTypes.readables) { (success, error) in
             if !success {
-                // Handle the error here.
+                
+            }else{
+                successBlock()
             }
         }
         

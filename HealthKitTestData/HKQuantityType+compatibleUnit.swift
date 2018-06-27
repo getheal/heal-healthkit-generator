@@ -11,7 +11,7 @@ import HealthKit
 extension HKQuantityType{
     func compatibleUnit() -> HKUnit?{
         // One unit of each kind. They are all convertible
-        let basicUnits = [HKUnit.pound(),
+        let basicUnits = [HKUnit.gram(),
                      HKUnit.foot(),
                      HKUnit.liter(),
                      HKUnit.pascal(),
