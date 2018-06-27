@@ -125,11 +125,45 @@ class Health {
                     
                     healthStore.save(sample) { (success, error) in                        
                         if let error = error {
-                            print("Error Saving sample: \(error.localizedDescription)")
+                            print("Error saving quant sample: \(error.localizedDescription)")
                         } else {
-                            print("Successfully saved sample")
+                            print("Successfully saved category sample")
                         }
                     }
+                }else if hkObjType.isKind(of: HKCategoryType.self){
+                    guard let catType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier(rawValue: hkObjType.identifier)) else {
+                        fatalError("Category could not be set")
+                    }
+                    
+                    // value has to be from the appropriate enum value
+                    var sample: HKCategorySample
+                    if catType.identifier == "HKCategoryTypeIdentifierCervicalMucusQuality"{
+                        //todo vary this
+                        sample = HKCategorySample(type: catType, value: HKCategoryValueCervicalMucusQuality.creamy.rawValue, start: iterdate, end: iterdate)
+                    }else if catType.identifier == "HKCategoryTypeIdentifierIntermenstrualBleeding"
+                        || catType.identifier == "HKCategoryTypeIdentifierMindfulSession"{
+                        sample = HKCategorySample(type: catType, value: HKCategoryValue.notApplicable.rawValue, start: iterdate, end: iterdate)
+                    }else if catType.identifier == "HKCategoryTypeIdentifierMenstrualFlow"{
+                        //todo vary this
+                        sample = HKCategorySample(type: catType, value: HKCategoryValueMenstrualFlow.heavy.rawValue, start: iterdate, end: iterdate, metadata: [HKMetadataKeyMenstrualCycleStart:true])
+                    }else if catType.identifier == "HKCategoryTypeIdentifierOvulationTestResult"{
+                        // todo vary this
+                        sample = HKCategorySample(type: catType, value: HKCategoryValueOvulationTestResult.indeterminate.rawValue, start: iterdate, end: iterdate)
+                    }else if catType.identifier == "HKCategoryTypeIdentifierSexualActivity"{
+                        sample = HKCategorySample(type: catType, value: HKCategoryValue.notApplicable.rawValue, start: iterdate, end: iterdate, metadata: [HKMetadataKeySexualActivityProtectionUsed:false])
+                    }else{ //if catType.identifier == "HKCategoryTypeSleepAnalysis"{
+                        // todo vary this
+                        sample = HKCategorySample(type: catType, value: HKCategoryValueSleepAnalysis.inBed.rawValue, start: iterdate, end: iterdate)
+                    }
+                    
+                    healthStore.save(sample) { (success, error) in
+                        if let error = error {
+                            print("Error saving category sample: \(error.localizedDescription)")
+                        } else {
+                            print("Successfully saved category sample")
+                        }
+                    }
+                    
                 }
             }
             

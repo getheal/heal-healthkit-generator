@@ -19,12 +19,12 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {    
         super.viewDidAppear(animated)
         
-        let tenDaysAgo = Date() - 10.days
+        let tenDaysAgo = Date() - 2.weeks
         Health().writeDataSince(since: tenDaysAgo)
         
         //Health().writeDataSince(since: Date())
         
-        Health().permission()
+//        Health().permission()
 //        Health().writeData()
 //        guard let bmiSampleType = HKSampleType.quantityType(forIdentifier: .bodyMassIndex) else {
 //            print("Height Sample Type is no longer available in HealthKit")
