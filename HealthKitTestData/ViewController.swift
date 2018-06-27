@@ -7,19 +7,34 @@
 //
 
 import UIKit
-
+import HealthKit
+import SwiftDate
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(_ animated: Bool) {    
+        super.viewDidAppear(animated)
+        
+        let tenDaysAgo = Date() - 10.days
+        //Health().writeDataSince(since: tenDaysAgo)
+        
+        //Health().writeDataSince(since: Date())
+        
+        Health().permission()
+//        Health().writeData()
+//        guard let bmiSampleType = HKSampleType.quantityType(forIdentifier: .bodyMassIndex) else {
+//            print("Height Sample Type is no longer available in HealthKit")
+//            return
+//        }
+//        Health().getMostRecentSample(for: bmiSampleType) { (sample, error) in
+//            print(sample!.quantity.doubleValue(for: HKUnit.count()))
+//        }
     }
 
-
+    
 }
 

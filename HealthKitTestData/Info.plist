@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We will write workouts to Health... Because we are a workout app</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>We will read activity information from Health... Because we are a workout app</string>
 </dict>
 </plist>
