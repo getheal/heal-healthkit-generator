@@ -1,4 +1,4 @@
-# heal-healthkit-generator
+# Heal HealthKit Sample Data Generator
 
 This is a small project for generating sample data within HealthKit on an iOS Simulator. 
 
