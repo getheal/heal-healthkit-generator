@@ -1,6 +1,0 @@
-framework module Pods_HealthKitTestData {
-  umbrella header "Pods-HealthKitTestData-umbrella.h"
-
-  export *
-  module * { export * }
-}
