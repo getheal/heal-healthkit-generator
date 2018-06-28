@@ -12,8 +12,7 @@ import SwiftDate
 class HKFakeData {
     var sampleTypes = Set<HKSampleType>()
     let healthStore = HKHealthStore()        
-    func permission(sampleTypes:Set<HKSampleType>, successBlock:@escaping () -> Void){
-        self.sampleTypes = sampleTypes
+    func permission(successBlock:@escaping () -> Void){
         healthStore.requestAuthorization(toShare: sampleTypes, read: sampleTypes) { (success, error) in
             if !success {
                 
@@ -88,9 +87,9 @@ class HKFakeData {
     func writeDataSince(since:Date, quantityTypeMap:[HKQuantityType:HKUnit]){
         var iterdate = since
         
-        while iterdate < Date() {
+        while iterdate <= Date() {
             // Add samples for day
-            for hkObjType in sampleTypes{
+            for hkObjType in self.sampleTypes{
                 if hkObjType.isKind(of: HKQuantityType.self){
                     guard let quantType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier(rawValue: hkObjType.identifier)) else {
                         fatalError("Quantity could not be set")
@@ -161,22 +160,19 @@ class HKFakeData {
                             print("Successfully saved category sample")
                         }
                     }
-                    
                 }
             }
             
             iterdate = iterdate + 1.day
-        }
+        }        
     }
     
     func writeDataSince(since:Date){
         
-        healthStore.preferredUnits(for: sampleTypes as! Set<HKQuantityType>) { (quantityTypeMap, error) in
+        healthStore.preferredUnits(for: self.sampleTypes as! Set<HKQuantityType>) { (quantityTypeMap, error) in
             self.writeDataSince(since: since, quantityTypeMap: quantityTypeMap)
         }
         
     }
-    
-    
     
 }
