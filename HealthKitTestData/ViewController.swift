@@ -14,10 +14,10 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {    
         super.viewDidAppear(animated)
         let hkTypes = HKObjectTypes()
-        let fakeData = HKFakeData()
-        fakeData.sampleTypes = hkTypes.writables
-        fakeData.permission(successBlock: {
-            fakeData.writeDataSince(since: (Date() - 8.month))
+        let sampleData = HKSampleData()
+        sampleData.sampleTypes = hkTypes.writables
+        sampleData.permission(successBlock: {
+            sampleData.writeDataSince(since: (Date() - 8.month))
         })
     }    
 }

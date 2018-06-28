@@ -1,5 +1,5 @@
 //
-//  HKFakeData.swift
+//  HKSampleData.swift
 //  HealthKitTestData
 //
 //  Created by Ricky Kirkendall on 6/25/18.
@@ -9,7 +9,7 @@
 import Foundation
 import HealthKit
 import SwiftDate
-class HKFakeData {
+class HKSampleData {
     var sampleTypes = Set<HKSampleType>()
     let healthStore = HKHealthStore()        
     func permission(successBlock:@escaping () -> Void){
