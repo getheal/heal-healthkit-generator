@@ -17,8 +17,13 @@ class ViewController: UIViewController {
         let sampleData = HKSampleData()
         sampleData.sampleTypes = hkTypes.writables
         sampleData.permission(successBlock: {
-            sampleData.writeDataSince(since: (Date() - 8.month))
+            sampleData.writeDataSince(since: (Date() - 20.days))
         })
-    }    
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        print("WARNING: RUNNING HOT")
+    }
 }
 

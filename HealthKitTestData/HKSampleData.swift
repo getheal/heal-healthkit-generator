@@ -84,6 +84,58 @@ class HKSampleData {
         }
     }
     
+    /*
+     Ranges for:
+     
+     Blood pressure
+     BMI
+     Heart Rate
+     Oxygen Saturation
+     Temperature
+     Weight (Body Mass)
+     
+     */
+    
+    func randomDoubleBetween(lower:Int, upper:Int) -> Double{
+        let diff = upper-lower
+        let randDiff = Double(arc4random_uniform(UInt32(diff))+1)
+        return Double(upper) - Double(randDiff)
+    }
+    
+    func implementRanges(sample:HKQuantitySample) -> HKQuantitySample{
+        if  sample.quantityType.identifier == "HKQuantityTypeIdentifierBloodPressureDiastolic"{
+            let d = randomDoubleBetween(lower: 110, upper: 160)
+            let q = HKQuantity(unit: HKUnit.millimeterOfMercury(), doubleValue: d)
+            return HKQuantitySample(type: sample.quantityType, quantity: q, start: sample.startDate, end: sample.endDate)
+        }else if  sample.quantityType.identifier == "HKQuantityTypeIdentifierBloodPressureSystolic"{
+            let s = randomDoubleBetween(lower: 70, upper: 120)
+            let q = HKQuantity(unit: HKUnit.millimeterOfMercury(), doubleValue: s)
+            return HKQuantitySample(type: sample.quantityType, quantity: q, start: sample.startDate, end: sample.endDate)
+        }else if  sample.quantityType.identifier == "HKQuantityTypeIdentifierBodyMassIndex"{
+            let s = randomDoubleBetween(lower: 18, upper: 25)
+            let q = HKQuantity(unit: HKUnit.count(), doubleValue: s)
+            return HKQuantitySample(type: sample.quantityType, quantity: q, start: sample.startDate, end: sample.endDate)
+        }else if  sample.quantityType.identifier == "HKQuantityTypeIdentifierHeartRate"{
+            let s = randomDoubleBetween(lower: 60, upper: 120)
+            let q = HKQuantity(unit: HKUnit.count().unitDivided(by: HKUnit.minute()), doubleValue: s)
+            return HKQuantitySample(type: sample.quantityType, quantity: q, start: sample.startDate, end: sample.endDate)
+        }else if  sample.quantityType.identifier == "HKQuantityTypeIdentifierOxygenSaturation"{
+            let s = randomDoubleBetween(lower: 95, upper: 100)
+            let q = HKQuantity(unit: HKUnit.percent(), doubleValue: s)
+            return HKQuantitySample(type: sample.quantityType, quantity: q, start: sample.startDate, end: sample.endDate)
+        }else if  sample.quantityType.identifier == "HKQuantityTypeIdentifierBodyMass"{
+            let s = randomDoubleBetween(lower: 110, upper: 310)
+            let q = HKQuantity(unit: HKUnit.pound(), doubleValue: s)
+            return HKQuantitySample(type: sample.quantityType, quantity: q, start: sample.startDate, end: sample.endDate)
+        }else if  sample.quantityType.identifier == "HKQuantityTypeIdentifierBodyTemperature"{
+            let s = randomDoubleBetween(lower: 97, upper: 104)
+            let q = HKQuantity(unit: HKUnit.degreeFahrenheit(), doubleValue: s)
+            return HKQuantitySample(type: sample.quantityType, quantity: q, start: sample.startDate, end: sample.endDate)
+        }
+        
+        return sample
+    }
+    
     func writeDataSince(since:Date, quantityTypeMap:[HKQuantityType:HKUnit]){
         var iterdate = since
         
@@ -119,6 +171,7 @@ class HKSampleData {
                     }                                            
                     print(quantType.identifier)
                     
+                    sample = implementRanges(sample: sample)                    
                     
                     healthStore.save(sample) { (success, error) in                        
                         if let error = error {
