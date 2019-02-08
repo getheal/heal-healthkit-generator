@@ -10,11 +10,11 @@ import Foundation
 import HealthKit
 // Todo
 
-var HKQuantityTypeRanges = ["HKQuantityTypeBodyMassIndex":["normalRange": ["lower":18.5,
-                                                                           "upper":24.9],
-                                                           "lowerRange": ["lower":0.0,
-                                                                          "upper":18.5],
-                                                           "upperRange": ["lower":25.0,
-                                                                          "upper":37.0],
-                                                           "unit":HKUnit.count()]
+var HKQuantityTypeRanges = ["HKQuantityTypeBodyMassIndex": ["normalRange": ["lower": 18.5,
+                                                                           "upper": 24.9],
+                                                           "lowerRange": ["lower": 0.0,
+                                                                          "upper": 18.5],
+                                                           "upperRange": ["lower": 25.0,
+                                                                          "upper": 37.0],
+                                                           "unit": HKUnit.count()]
 ]

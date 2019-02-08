@@ -9,24 +9,23 @@
 import Foundation
 import HealthKit
 
-struct HKObjectTypes{
+struct HKObjectTypes {
     let characteristicTypes = Set([HKObjectType.characteristicType(forIdentifier: .biologicalSex)!,
                                    HKObjectType.characteristicType(forIdentifier: .bloodType)!,
                                    HKObjectType.characteristicType(forIdentifier: .dateOfBirth)!,
                                    HKObjectType.characteristicType(forIdentifier: .fitzpatrickSkinType)!,
-                                   HKObjectType.characteristicType(forIdentifier: .wheelchairUse)!,
+                                   HKObjectType.characteristicType(forIdentifier: .wheelchairUse)!
                                    ])
-    
+
     let categoryTypes = Set([HKObjectType.categoryType(forIdentifier: .cervicalMucusQuality)!,
                              HKObjectType.categoryType(forIdentifier: .intermenstrualBleeding)!,
                              HKObjectType.categoryType(forIdentifier: .menstrualFlow)!,
                              HKObjectType.categoryType(forIdentifier: .mindfulSession)!,
                              HKObjectType.categoryType(forIdentifier: .ovulationTestResult)!,
                              HKObjectType.categoryType(forIdentifier: .sexualActivity)!,
-                             HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
+                             HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!
                              ])
-    
-    
+
     let quantityTypes = Set([HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
                              HKObjectType.quantityType(forIdentifier: .basalEnergyBurned)!,
                              HKObjectType.quantityType(forIdentifier: .basalBodyTemperature)!,
@@ -104,10 +103,10 @@ struct HKObjectTypes{
                              HKObjectType.quantityType(forIdentifier: .uvExposure)!,
                              HKObjectType.quantityType(forIdentifier: .vo2Max)!,
                              HKObjectType.quantityType(forIdentifier: .waistCircumference)!,
-                             HKObjectType.quantityType(forIdentifier: .walkingHeartRateAverage)!,
+                             HKObjectType.quantityType(forIdentifier: .walkingHeartRateAverage)!
                              ])
-    
-    let nonsharables = Set([HKObjectType.quantityType(forIdentifier: .walkingHeartRateAverage)!,
+
+    let nonsharables = Set([HKObjectType.quantityType(forIdentifier: .walkingHeartRateAverage)!
                             //HKObjectType.quantityType(forIdentifier: .distanceDownhillSnowSports)!,
                             //HKObjectType.quantityType(forIdentifier: .peripheralPerfusionIndex)!,
                             //HKObjectType.quantityType(forIdentifier: .oxygenSaturation)!,
@@ -117,6 +116,6 @@ struct HKObjectTypes{
     init() {
         writables = Set().union(quantityTypes).union(categoryTypes).subtracting(nonsharables)
         readables = Set().union(characteristicTypes).union(quantityTypes).union(categoryTypes)
-    }    
-    
+    }
+
 }
