@@ -155,7 +155,7 @@ class HKSampleData {
                         fatalError("Compatible HKUnit not found for \(quantType.identifier)")
                     }
 
-                    let rand = Double(arc4random_uniform(100)+1)
+                    let rand = Double(arc4random_uniform(10000)+1)
                     let quantity = HKQuantity(unit: unit, doubleValue: rand)
 
                     var sample: HKQuantitySample
