@@ -1,16 +1,20 @@
 PODS:
   - SwiftDate (4.5.1)
+  - SwiftLint (0.29.1)
 
 DEPENDENCIES:
   - SwiftDate
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SwiftDate
+    - SwiftLint
 
 SPEC CHECKSUMS:
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
+  SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
 
-PODFILE CHECKSUM: 2de91ae9bc06c8270ef9e733d4764e209cd486d5
+PODFILE CHECKSUM: d0e9ca92c0e85b4be90c3268b5f9fb8cfafe1197
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.2

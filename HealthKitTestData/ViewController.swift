@@ -10,8 +10,8 @@ import UIKit
 import HealthKit
 import SwiftDate
 class ViewController: UIViewController {
-    
-    override func viewDidAppear(_ animated: Bool) {    
+
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let hkTypes = HKObjectTypes()
         let sampleData = HKSampleData()
@@ -20,10 +20,9 @@ class ViewController: UIViewController {
             sampleData.writeDataSince(since: (Date() - 20.days))
         })
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print("WARNING: RUNNING HOT")
     }
 }
-
